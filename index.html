@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="H₂OP Das Hopfenwasser - Join the Revolution. 0% Alcohol, Low Calorie, Crisp Flavor. Experience the refreshing taste of hop-infused sparkling water."
+    />
+    <title>H₂OP · Das Hopfenwasser - Join the Revolution</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+      html,
+      body {
+        color: hsl(220, 15%, 15%);
+      }
+
+      @keyframes aurora {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+
+      .aurora-text {
+        background: linear-gradient(
+          90deg,
+          hsl(156, 60%, 28%),
+          hsl(156, 40%, 38%),
+          hsl(156, 60%, 28%)
+        );
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: aurora 3s ease-in-out infinite;
+      }
+    </style>
+    <link rel="stylesheet" href="globals.css" />
+  </head>
+  <body class="font-body antialiased bg-neutral text-neutral-foreground">
+    <!-- Navigation -->
+    <header
+      id="navbar"
+      class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    >
+      <nav
+        class="container mx-auto px-8 py-6 flex items-center justify-between max-w-screen-xl"
+      >
+        <div class="flex items-center">
+          <a
+            href="#hero"
+            class="text-2xl font-sans font-medium text-navbar-text tracking-tight"
+          >
+            H₂OP
+            <span class="text-sm font-body font-light">· Das Hopfenwasser</span>
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center gap-12">
+          <a
+            href="#story"
+            class="text-navbar-text font-body font-normal hover:text-primary transition-colors duration-200 cursor-pointer"
+            >Story</a
+          >
+          <a
+            href="#lifestyle"
+            class="text-navbar-text font-body font-normal hover:text-primary transition-colors duration-200 cursor-pointer"
+            >Lifestyle</a
+          >
+          <a
+            href="#product"
+            class="text-navbar-text font-body font-normal hover:text-primary transition-colors duration-200 cursor-pointer"
+            >Product</a
+          >
+        </div>
+
+        <div class="hidden md:block">
+          <a
+            href="#join"
+            class="inline-block px-8 py-3 bg-primary text-primary-foreground font-body font-normal rounded-full hover:bg-secondary transition-colors duration-200 cursor-pointer"
+          >
+            Join Now
+          </a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden p-2 text-navbar-text"
+          aria-label="Toggle mobile menu"
+        >
+          <svg
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div
+      id="mobile-menu"
+      class="fixed inset-0 z-40 bg-neutral transform translate-x-full transition-transform duration-300 md:hidden"
+    >
+      <div class="flex flex-col h-full">
+        <div class="flex items-center justify-between px-8 py-6">
+          <span
+            class="text-2xl font-sans font-medium text-navbar-text tracking-tight"
+            >H₂OP</span
+          >
+          <button
+            id="mobile-menu-close"
+            class="p-2 text-navbar-text"
+            aria-label="Close mobile menu"
+          >
+            <svg
+              width="24"
+              height="24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-8 px-8 py-12">
+          <a
+            href="#story"
+            class="text-2xl text-navbar-text font-body font-normal hover:text-primary transition-colors duration-200"
+            >Story</a
+          >
+          <a
+            href="#lifestyle"
+            class="text-2xl text-navbar-text font-body font-normal hover:text-primary transition-colors duration-200"
+            >Lifestyle</a
+          >
+          <a
+            href="#product"
+            class="text-2xl text-navbar-text font-body font-normal hover:text-primary transition-colors duration-200"
+            >Product</a
+          >
+          <a
+            href="#join"
+            class="inline-block px-8 py-3 bg-primary text-primary-foreground font-body font-normal rounded-full hover:bg-secondary transition-colors duration-200 text-center mt-8"
+          >
+            Join Now
+          </a>
+        </nav>
+      </div>
+    </div>
+
+    <main>
+      <!-- Hero Section -->
+      <section
+        id="hero"
+        class="relative min-h-screen flex items-center bg-gradient-1 pt-32 pb-24 px-8"
+      >
+        <div class="container mx-auto max-w-screen-xl">
+          <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+              <h1
+                class="text-5xl md:text-6xl lg:text-7xl font-sans font-medium text-hero-text leading-tight tracking-tight"
+              >
+                <span class="aurora-text">Join the Revolution</span>
+              </h1>
+              <h2
+                class="text-xl md:text-2xl font-body font-light text-gray-700 leading-relaxed"
+              >
+                Experience the refreshing taste of hop-infused sparkling water.
+                Zero alcohol, pure enjoyment.
+              </h2>
+              <div>
+                <a
+                  href="#product"
+                  class="inline-block px-10 py-4 bg-primary text-primary-foreground font-body font-normal rounded-full hover:bg-secondary transition-colors duration-200 cursor-pointer"
+                >
+                  Discover H₂OP
+                </a>
+              </div>
+            </div>
+            <div class="relative">
+              <img
+                src="https://c.animaapp.com/mlxxirqr4lBKgM/img/ai_3.png"
+                alt="chilled glass with condensation and bubbles"
+                width="800"
+                height="800"
+                loading="eager"
+                class="w-full h-auto rounded-3xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story Section -->
+      <section id="story" class="py-32 px-8 bg-neutral">
+        <div class="container mx-auto max-w-screen-xl">
+          <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div
+              class="relative h-96 md:h-full min-h-[500px] rounded-3xl overflow-hidden"
+            >
+              <video
+                aria-label="sparkling hop water video background"
+                src="https://c.animaapp.com/mlxxirqr4lBKgM/img/ai_1.mp4"
+                poster="https://c.animaapp.com/mlxxirqr4lBKgM/img/ai_1-poster.png"
+                class="w-full h-full object-cover"
+                autoplay=""
+                loop=""
+                muted=""
+                playsinline=""
+                loading="lazy"
+              ></video>
+              <div
+                class="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/0 to-black/80"
+              ></div>
+            </div>
+            <div class="space-y-8">
+              <h2
+                class="text-4xl md:text-5xl font-sans font-medium text-neutral-foreground leading-tight tracking-tight"
+              >
+                Our Story
+              </h2>
+              <p
+                class="text-lg font-body font-light text-gray-700 leading-relaxed"
+              >
+                Born from a passion for craft brewing and a desire for healthier
+                alternatives, H₂OP combines the aromatic complexity of premium
+                hops with pure sparkling water. We've created a beverage that
+                delivers the sophisticated taste experience you crave, without
+                the alcohol.
+              </p>
+              <p
+                class="text-lg font-body font-light text-gray-700 leading-relaxed"
+              >
+                Every bottle is a celebration of natural ingredients, innovative
+                brewing techniques, and our commitment to quality. Join us in
+                redefining what a refreshing drink can be.
+              </p>
+              <div>
+                <a
+                  href="#product"
+                  class="inline-block px-8 py-3 bg-transparent text-primary font-body font-normal rounded-full border-2 border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200 cursor-pointer"
+                >
+                  Learn More
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Product Highlights -->
+      <section id="product" class="py-32 px-8 bg-tertiary">
+        <div class="container mx-auto max-w-screen-xl">
+          <div class="text-center mb-20">
+            <h2
+              class="text-4xl md:text-5xl font-sans font-medium text-tertiary-foreground leading-tight tracking-tight mb-6"
+            >
+              Why Choose H₂OP
+            </h2>
+            <p
+              class="text-lg font-body font-light text-gray-700 max-w-2xl mx-auto"
+            >
+              Premium quality meets refreshing simplicity
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-3 gap-12">
+            <!-- Card 1 -->
+            <a
+              href="#join"
+              class="group block bg-neutral rounded-3xl p-10 border-2 border-gray-200 hover:border-primary transition-all duration-200 cursor-pointer hover:scale-105"
+            >
+              <div class="space-y-6">
+                <div
+                  class="w-20 h-20 bg-gradient-1 rounded-2xl flex items-center justify-center"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    fill="none"
+                    stroke="hsl(156, 60%, 28%)"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <circle cx="20" cy="20" r="18"></circle>
+                    <line x1="8" y1="20" x2="32" y2="20"></line>
+                  </svg>
+                </div>
+                <h3
+                  class="text-2xl font-sans font-medium text-neutral-foreground"
+                >
+                  0% Alcohol
+                </h3>
+                <p
+                  class="text-base font-body font-light text-gray-700 leading-relaxed"
+                >
+                  All the flavor and sophistication of craft brewing, without
+                  any alcohol. Perfect for any time of day.
+                </p>
+              </div>
+            </a>
+
+            <!-- Card 2 -->
+            <a
+              href="#join"
+              class="group block bg-neutral rounded-3xl p-10 border-2 border-gray-200 hover:border-primary transition-all duration-200 cursor-pointer hover:scale-105"
+            >
+              <div class="space-y-6">
+                <div
+                  class="w-20 h-20 bg-gradient-1 rounded-2xl flex items-center justify-center"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    fill="none"
+                    stroke="hsl(156, 60%, 28%)"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 4v16m0 0l-6-6m6 6l6-6M8 36h24"></path>
+                  </svg>
+                </div>
+                <h3
+                  class="text-2xl font-sans font-medium text-neutral-foreground"
+                >
+                  Low Calorie
+                </h3>
+                <p
+                  class="text-base font-body font-light text-gray-700 leading-relaxed"
+                >
+                  Guilt-free refreshment with minimal calories. Stay hydrated
+                  and energized throughout your day.
+                </p>
+              </div>
+            </a>
+
+            <!-- Card 3 -->
+            <a
+              href="#join"
+              class="group block bg-neutral rounded-3xl p-10 border-2 border-gray-200 hover:border-primary transition-all duration-200 cursor-pointer hover:scale-105"
+            >
+              <div class="space-y-6">
+                <div
+                  class="w-20 h-20 bg-gradient-1 rounded-2xl flex items-center justify-center"
+                >
+                  <svg
+                    width="40"
+                    height="40"
+                    fill="none"
+                    stroke="hsl(156, 60%, 28%)"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M20 4l4 8 8 2-6 6 2 8-8-4-8 4 2-8-6-6 8-2z"></path>
+                  </svg>
+                </div>
+                <h3
+                  class="text-2xl font-sans font-medium text-neutral-foreground"
+                >
+                  Crisp Flavor
+                </h3>
+                <p
+                  class="text-base font-body font-light text-gray-700 leading-relaxed"
+                >
+                  Premium hops deliver a complex, refreshing taste profile that
+                  elevates every sip.
+                </p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Lifestyle Section -->
+      <section id="lifestyle" class="py-32 px-8 bg-neutral">
+        <div class="container mx-auto max-w-screen-xl">
+          <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8 order-2 md:order-1">
+              <h2
+                class="text-4xl md:text-5xl font-sans font-medium text-neutral-foreground leading-tight tracking-tight"
+              >
+                A Lifestyle Choice
+              </h2>
+              <p
+                class="text-lg font-body font-light text-gray-700 leading-relaxed"
+              >
+                H₂OP is more than just a beverage—it's a statement. Whether
+                you're at a social gathering, after a workout, or simply
+                enjoying a moment of relaxation, H₂OP fits seamlessly into your
+                active, mindful lifestyle.
+              </p>
+              <p
+                class="text-lg font-body font-light text-gray-700 leading-relaxed"
+              >
+                Join thousands who have discovered that you don't need alcohol
+                to enjoy a sophisticated, flavorful drink. Experience the
+                revolution in refreshment.
+              </p>
+            </div>
+            <div class="relative order-1 md:order-2">
+              <img
+                src="https://c.animaapp.com/mlxxirqr4lBKgM/img/ai_5.png"
+                alt="people enjoying hop water outdoors"
+                width="1600"
+                height="1000"
+                loading="lazy"
+                class="w-full h-auto rounded-3xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="py-32 px-8 bg-gradient-2">
+        <div class="container mx-auto max-w-screen-xl">
+          <div class="text-center mb-20">
+            <h2
+              class="text-4xl md:text-5xl font-sans font-medium text-primary-foreground leading-tight tracking-tight mb-6"
+            >
+              What People Say
+            </h2>
+            <p
+              class="text-lg font-body font-light text-gray-100 max-w-2xl mx-auto"
+            >
+              Join our growing community of H₂OP enthusiasts
+            </p>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+            <div
+              class="bg-neutral/10 backdrop-blur-sm rounded-3xl p-10 border border-primary-foreground/20"
+            >
+              <div class="space-y-6">
+                <div class="flex gap-2">
+                  <svg
+                    width="20"
+                    height="20"
+                    fill="hsl(35, 85%, 55%)"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M10 1l2.5 6.5L19 8.5l-5 4.5 1.5 6.5L10 16l-5.5 3.5L6 13 1 8.5l6.5-1z"
+                    ></path>
+                  </svg>
+                  <svg
+                    width="20"
+                    height="20"
+                    fill="hsl(35, 85%, 55%)"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M10 1l2.5 6.5L19 8.5l-5 4.5 1.5 6.5L10 16l-5.5 3.5L6 13 1 8.5l6.5-1z"
+                    ></path>
+                  </svg>
+                  <svg
+                    width="20"
+                    height="20"
+                    fill="hsl(35, 85%, 55%)"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M10 1l2.5 6.5L19 8.5l-5 4.5 1.5 6.5L10 16l-5.5 3.5L6 13 1 8.5l6.5-1z"
+                    ></path>
+                  </svg>
+                  <svg
+                    width="20"
+                    height="20"
+                    fill="hsl(35, 85%, 55%)"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M10 1l2.5 6.5L19 8.5l-5 4.5 1.5 6.5L10 16l-5.5 3.5L6 13 1 8.5l6.5-1z"
+                    ></path>
+                  </svg>
+                  <svg
+                    width="20"
+                    height="20"
+                    fill="hsl(35, 85%, 55%)"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M10 1l2.5 6.5L19 8.5l-5 4.5 1.5 6.5L10 16l-5.5 3.5L6 13 1 8.5l6.5-1z"
+                    ></path>
+                  </svg>
+                </div>
+                <p
+                  class="text-lg font-body font-light text-primary-foreground leading-relaxed"
+                >
+                  "Finally, a sophisticated alternative to alcohol! H₂OP has
+                  become my go-to drink for social events. The hop flavor is
+                  incredible."
+                </p>
+                <p class="text-base font-body font-normal text-gray-100">
+                  — Sarah M., Berlin
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="bg-neutral/10 backdrop-blur-sm rounded-3xl p-10 border border-primary-foreground/20"
+            >
+              <div class="space-y-6">
+                <div class="flex gap-2">
+                  <svg
+                    width="20"
+                    height="20"
+                    fill="hsl(35, 85%, 55%)"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M10 1l2.5 6.5L19 8.5l-5 4.5 1.5 6.5L10 16l-5.5 3.5L6 13 1 8.5l6.5-1z"
+                    ></path>
+                  </svg>
+                  <svg
+                    width="20"
+                    height="20"
+                    fill="hsl(35, 85%, 55%)"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M10 1l2.5 6.5L19 8.5l-5 4.5 1.5 6.5L10 16l-5.5 3.5L6 13 1 8.5l6.5-1z"
+                    ></path>
+                  </svg>
+                  <svg
+                    width="20"
+                    height="20"
+                    fill="hsl(35, 85%, 55%)"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M10 1l2.5 6.5L19 8.5l-5 4.5 1.5 6.5L10 16l-5.5 3.5L6 13 1 8.5l6.5-1z"
+                    ></path>
+                  </svg>
+                  <svg
+                    width="20"
+                    height="20"
+                    fill="hsl(35, 85%, 55%)"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M10 1l2.5 6.5L19 8.5l-5 4.5 1.5 6.5L10 16l-5.5 3.5L6 13 1 8.5l6.5-1z"
+                    ></path>
+                  </svg>
+                  <svg
+                    width="20"
+                    height="20"
+                    fill="hsl(35, 85%, 55%)"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      d="M10 1l2.5 6.5L19 8.5l-5 4.5 1.5 6.5L10 16l-5.5 3.5L6 13 1 8.5l6.5-1z"
+                    ></path>
+                  </svg>
+                </div>
+                <p
+                  class="text-lg font-body font-light text-primary-foreground leading-relaxed"
+                >
+                  "As an athlete, I love that I can enjoy a flavorful drink
+                  without compromising my training. H₂OP is refreshing and
+                  guilt-free!"
+                </p>
+                <p class="text-base font-body font-normal text-gray-100">
+                  — Marcus K., Munich
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Product Showcase -->
+      <section class="py-32 px-8 bg-tertiary">
+        <div class="container mx-auto max-w-screen-xl">
+          <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative">
+              <img
+                src="https://c.animaapp.com/mlxxirqr4lBKgM/img/ai_2.png"
+                alt="fresh hops and water splash closeup"
+                width="1400"
+                height="900"
+                loading="lazy"
+                class="w-full h-auto rounded-3xl"
+              />
+            </div>
+            <div class="space-y-8">
+              <h2
+                class="text-4xl md:text-5xl font-sans font-medium text-tertiary-foreground leading-tight tracking-tight"
+              >
+                Crafted with Care
+              </h2>
+              <p
+                class="text-lg font-body font-light text-gray-700 leading-relaxed"
+              >
+                We source only the finest hops from sustainable farms, combining
+                traditional brewing knowledge with modern innovation. Each batch
+                is carefully crafted to ensure consistent quality and
+                exceptional taste.
+              </p>
+              <div class="grid grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <h3
+                    class="text-xl font-sans font-medium text-tertiary-foreground"
+                  >
+                    Natural Ingredients
+                  </h3>
+                  <p class="text-base font-body font-light text-gray-700">
+                    100% natural hops and pure water
+                  </p>
+                </div>
+                <div class="space-y-2">
+                  <h3
+                    class="text-xl font-sans font-medium text-tertiary-foreground"
+                  >
+                    Sustainable
+                  </h3>
+                  <p class="text-base font-body font-light text-gray-700">
+                    Eco-friendly production methods
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA Section -->
+      <section id="join" class="py-32 px-8 bg-gradient-1">
+        <div class="container mx-auto max-w-screen-xl text-center">
+          <div class="max-w-3xl mx-auto space-y-8">
+            <h2
+              class="text-4xl md:text-5xl font-sans font-medium text-hero-text leading-tight tracking-tight"
+            >
+              Ready to Join the Revolution?
+            </h2>
+            <p
+              class="text-xl font-body font-light text-gray-700 leading-relaxed"
+            >
+              Experience the refreshing taste of H₂OP today. Available at select
+              retailers and online.
+            </p>
+            <div
+              class="flex flex-col sm:flex-row gap-6 justify-center items-center pt-8"
+            >
+              <a
+                href="#product"
+                class="inline-block px-10 py-4 bg-primary text-primary-foreground font-body font-normal rounded-full hover:bg-secondary transition-colors duration-200 cursor-pointer"
+              >
+                Find H₂OP Near You
+              </a>
+              <a
+                href="#story"
+                class="inline-block px-10 py-4 bg-transparent text-primary font-body font-normal rounded-full border-2 border-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200 cursor-pointer"
+              >
+                Learn More
+              </a>
+            </div>
+            <div class="pt-12">
+              <img
+                src="https://c.animaapp.com/mlxxirqr4lBKgM/img/ai_4.png"
+                alt="pouring clear sparkling drink into glass"
+                width="800"
+                height="800"
+                loading="lazy"
+                class="w-full max-w-md mx-auto h-auto rounded-3xl"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-2 text-primary-foreground py-20 px-8">
+      <div class="container mx-auto max-w-screen-xl">
+        <div class="grid md:grid-cols-4 gap-12 mb-16">
+          <div class="space-y-6">
+            <h3 class="text-2xl font-sans font-medium text-primary-foreground">
+              H₂OP
+            </h3>
+            <p class="text-base font-body font-light text-gray-100">
+              Das Hopfenwasser
+            </p>
+            <p
+              class="text-sm font-body font-light text-gray-200 leading-relaxed"
+            >
+              Redefining refreshment with premium hop-infused sparkling water.
+            </p>
+          </div>
+
+          <div class="space-y-6">
+            <h4 class="text-lg font-sans font-medium text-primary-foreground">
+              Product
+            </h4>
+            <nav class="flex flex-col gap-4">
+              <a
+                href="#story"
+                class="text-base font-body font-light text-gray-100 hover:text-primary-foreground transition-colors duration-200"
+                >Our Story</a
+              >
+              <a
+                href="#product"
+                class="text-base font-body font-light text-gray-100 hover:text-primary-foreground transition-colors duration-200"
+                >Features</a
+              >
+              <a
+                href="#lifestyle"
+                class="text-base font-body font-light text-gray-100 hover:text-primary-foreground transition-colors duration-200"
+                >Lifestyle</a
+              >
+            </nav>
+          </div>
+
+          <div class="space-y-6">
+            <h4 class="text-lg font-sans font-medium text-primary-foreground">
+              Company
+            </h4>
+            <nav class="flex flex-col gap-4">
+              <a
+                href="#story"
+                class="text-base font-body font-light text-gray-100 hover:text-primary-foreground transition-colors duration-200"
+                >About</a
+              >
+              <a
+                href="#join"
+                class="text-base font-body font-light text-gray-100 hover:text-primary-foreground transition-colors duration-200"
+                >Contact</a
+              >
+              <a
+                href="#product"
+                class="text-base font-body font-light text-gray-100 hover:text-primary-foreground transition-colors duration-200"
+                >FAQ</a
+              >
+            </nav>
+          </div>
+
+          <div class="space-y-6">
+            <h4 class="text-lg font-sans font-medium text-primary-foreground">
+              Follow Us
+            </h4>
+            <div class="flex gap-6">
+              <a
+                href="#"
+                class="text-gray-100 hover:text-primary-foreground transition-colors duration-200"
+                aria-label="Instagram"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="text-gray-100 hover:text-primary-foreground transition-colors duration-200"
+                aria-label="Facebook"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  ></path>
+                </svg>
+              </a>
+              <a
+                href="#"
+                class="text-gray-100 hover:text-primary-foreground transition-colors duration-200"
+                aria-label="Twitter"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"
+                  ></path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-primary-foreground/20 pt-8">
+          <p class="text-center text-sm font-body font-light text-gray-200">
+            © 2025 H₂OP Das Hopfenwasser. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuClose = document.getElementById('mobile-menu-close');
+      const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+      mobileMenuBtn.addEventListener('click', () => {
+        mobileMenu.classList.remove('translate-x-full');
+      });
+
+      mobileMenuClose.addEventListener('click', () => {
+        mobileMenu.classList.add('translate-x-full');
+      });
+
+      mobileMenuLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.add('translate-x-full');
+        });
+      });
+
+      // Navbar scroll effect
+      const navbar = document.getElementById('navbar');
+      let lastScroll = 0;
+
+      window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+
+        if (currentScroll > 100) {
+          navbar.classList.add(
+            'bg-neutral/95',
+            'backdrop-blur-md',
+            'shadow-sm',
+          );
+        } else {
+          navbar.classList.remove(
+            'bg-neutral/95',
+            'backdrop-blur-md',
+            'shadow-sm',
+          );
+        }
+
+        lastScroll = currentScroll;
+      });
+
+      // Active section highlighting
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('nav a[href^="#"]');
+
+      function highlightNavigation() {
+        const scrollY = window.pageYOffset;
+
+        sections.forEach((section) => {
+          const sectionHeight = section.offsetHeight;
+          const sectionTop = section.offsetTop - 100;
+          const sectionId = section.getAttribute('id');
+
+          if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach((link) => {
+              if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('text-primary');
+                link.classList.remove('text-navbar-text');
+              } else {
+                link.classList.remove('text-primary');
+                link.classList.add('text-navbar-text');
+              }
+            });
+          }
+        });
+      }
+
+      window.addEventListener('scroll', highlightNavigation);
+      highlightNavigation();
+    </script>
+  </body>
+</html>
