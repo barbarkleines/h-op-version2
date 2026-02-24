@@ -82,13 +82,13 @@
             >Produkt</a
           >
         </div>
-        <!-- Language Switch -->
-        <div class="relative">
-          <select onchange="location = this.value;" class="px-3 py-2 rounded-full border text-sm">
-            <option value="/">🇬🇧 EN</option>
-            <option value="/de/">🇩🇪 DE</option>
-          </select>
-        </div>
+     <!-- Language Switch Dropdown -->
+<div class="relative">
+  <select id="language-select" class="px-3 py-2 rounded-full border text-sm cursor-pointer">
+    <option value="en">🇬🇧 EN</option>
+    <option value="de" selected>🇩🇪 DE</option>
+  </select>
+</div>
         <div class="hidden md:block">
           <a
             href="#join"
@@ -886,26 +886,28 @@ Erlebe mit uns, wie moderner Genuss heute schmeckt.
       highlightNavigation();
     </script>
 
-    <!-- Language redirect script - DISABLED until /de/ page exists -->
-    <!--
-    <script>
-    (function () {
-      // Don't redirect if already on German page
-      if (window.location.pathname.startsWith('/de')) return;
-
-      // Check browser language
-      const lang = navigator.language || navigator.userLanguage;
-
-      // If German browser → redirect to /de/
-      if (lang.toLowerCase().startsWith('de')) {
-        // Prevent infinite redirect if user came back manually
-        if (!sessionStorage.getItem('langRedirectDone')) {
-          sessionStorage.setItem('langRedirectDone', 'true');
-          window.location.href = '/de/';
+<script>
+  // =============================================
+  // DROPDOWN LANGUAGE SWITCHER FOR GERMAN PAGE
+  // =============================================
+  document.addEventListener('DOMContentLoaded', function() {
+    const select = document.getElementById('language-select');
+    
+    if (select) {
+      select.addEventListener('change', function(e) {
+        const lang = e.target.value;
+        
+        // Save user's choice
+        localStorage.setItem('languageChoice', lang);
+        
+        // Redirect based on selection
+        if (lang === 'en') {
+          window.location.href = 'https://h2opwater.de/'; // Goes to main English page
         }
-      }
-    })();
-    </script>
-    -->
+        // If DE selected, stay on current page
+      });
+    }
+  });
+</script>
   </body>
 </html>
