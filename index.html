@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
   <head>
+    <link rel="alternate" hreflang="de" href="https://h2opwater.de/de/" />
+<link rel="alternate" hreflang="en" href="https://h2opwater.de/" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
@@ -920,5 +922,28 @@ H2OP belongs to the premium functional beverage and alcohol-free social drink ca
       window.addEventListener('scroll', highlightNavigation);
       highlightNavigation();
     </script>
+    <script>
+(function () {
+
+  // Don't redirect if already on German page
+  if (window.location.pathname.startsWith('/de')) return;
+
+  // Check browser language
+  const lang = navigator.language || navigator.userLanguage;
+
+  // If German browser → redirect to /de/
+  if (lang.toLowerCase().startsWith('de')) {
+
+    // Prevent infinite redirect if user came back manually
+    if (!sessionStorage.getItem('langRedirectDone')) {
+
+      sessionStorage.setItem('langRedirectDone', 'true');
+      window.location.href = '/de/';
+
+    }
+  }
+
+})();
+</script>
   </body>
 </html>
