@@ -82,7 +82,13 @@
             >Product</a
           >
         </div>
-
+<!-- Language Switch Dropdown -->
+<div class="relative">
+  <select id="language-select" class="px-3 py-2 rounded-full border text-sm cursor-pointer">
+    <option value="en" selected>🇬🇧 EN</option>
+    <option value="de">🇩🇪 DE</option>
+  </select>
+</div>
         <div class="hidden md:block">
           <a
             href="#join"
@@ -911,5 +917,75 @@ H2OP belongs to the premium functional beverage and alcohol-free social drink ca
       window.addEventListener('scroll', highlightNavigation);
       highlightNavigation();
     </script>
+   <script>
+  // =============================================
+  // AUTO-REDIRECT FOR GERMAN VISITORS (FIRST TIME ONLY)
+  // =============================================
+  (function() {
+    // Only run on English page, not on German page
+    if (!window.location.pathname.includes('/de/')) {
+      
+      // Check if user has chosen a language before
+      const userChoice = localStorage.getItem('languageChoice');
+      
+      // If user already chose English, do nothing
+      if (userChoice === 'en') return;
+      
+      // If user already chose German, redirect
+      if (userChoice === 'de') {
+        window.location.href = 'https://h2opwater.de/de/';
+        return;
+      }
+      
+      // First time visitor - check browser language
+      const browserLang = navigator.language || navigator.userLanguage;
+      
+      if (browserLang.toLowerCase().startsWith('de')) {
+        // German browser - save choice and redirect
+        localStorage.setItem('languageChoice', 'de');
+        window.location.href = 'https://h2opwater.de/de/';
+      } else {
+        // Non-German browser - save English preference
+        localStorage.setItem('languageChoice', 'en');
+      }
+    }
+  })();
+
+  // =============================================
+  // DROPDOWN LANGUAGE SWITCHER - FIXED VERSION
+  // =============================================
+  document.addEventListener('DOMContentLoaded', function() {
+    const select = document.getElementById('language-select');
+    
+    if (select) {
+      
+      // ✅ FIX 1: Set the correct dropdown value based on current page
+      if (window.location.pathname.includes('/de/')) {
+        select.value = 'de';
+      } else {
+        select.value = 'en';
+      }
+      
+      // ✅ FIX 2: Handle when user changes the dropdown
+      select.addEventListener('change', function(e) {
+        const lang = e.target.value;
+        
+        // Save user's choice
+        localStorage.setItem('languageChoice', lang);
+        
+        // Redirect based on selection
+        if (lang === 'de') {
+          window.location.href = 'https://h2opwater.de/de/';
+        } else {
+          // If EN selected and we're on German page, go to English
+          if (window.location.pathname.includes('/de/')) {
+            window.location.href = 'https://h2opwater.de/';
+          }
+          // If EN selected and already on English page, do nothing
+        }
+      });
+    }
+  });
+</script>
   </body>
 </html>
